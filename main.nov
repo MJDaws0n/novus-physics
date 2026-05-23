@@ -1,0 +1,12 @@
+// ---------------------------------------------------------------------------
+// physics - simple collision helpers for gameplay code
+// ---------------------------------------------------------------------------
+
+module physics_main;
+
+fn aabb_check(ax: i32, ay: i32, aw: i32, ah: i32, bx: i32, by: i32, bw: i32, bh: i32) -> i32 {
+    if (ax + aw < bx || bx + bw < ax || ay + ah < by || by + bh < ay) {
+        return 0;
+    }
+    return 1;
+}

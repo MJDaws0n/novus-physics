@@ -1,0 +1,21 @@
+module physics_tests_linux_arm64;
+
+import main physics;
+
+fn expect_eq(label: str, actual: i32, expected: i32, fails: i32) -> i32 {
+    if (actual == expected) {
+        return fails;
+    }
+    return fails + 1;
+}
+
+fn main() -> i32 {
+    let fails: i32 = 0;
+    let next_fails: i32 = expect_eq("overlap", physics.aabb_check(0, 0, 16, 16, 8, 8, 16, 16), 1, fails);
+    let final_fails: i32 = expect_eq("separate", physics.aabb_check(0, 0, 16, 16, 64, 64, 16, 16), 0, next_fails);
+
+    if (final_fails > 0) {
+        return 1;
+    }
+    return 0;
+}
