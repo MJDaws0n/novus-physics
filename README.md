@@ -1,8 +1,22 @@
 # novus-physics
 
-Small collision helpers for Novus projects.
+Physics primitives: 2D/3D vectors, basic mechanics.
 
-## Files
+A library for the [Novus](https://github.com/MJDaws0n/Novus) language, installable
+via [Nox](https://github.com/MJDaws0n/Nox).
 
-- `main.nov` - library entry point
-- `tests.nov`
+## Install
+
+```sh
+nox pull physics
+```
+
+## Documentation
+
+See [`docs.md`](docs.md) for the full API reference.
+
+## Import
+
+```novus
+import lib/physics physics;
+```
